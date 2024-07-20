@@ -2,7 +2,6 @@
 
 library(webutils)
 library(rBuildingLibraryTest)
-library(httr)
 
 # Set the content type to HTML
 cat("Content-type: text/html\n\n")
