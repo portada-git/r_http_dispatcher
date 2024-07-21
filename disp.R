@@ -32,18 +32,8 @@ parseDataToChar <- function(param){
 handle_testSum <- function(parsed_data){
   cat("<html><body>")
   cat("<h2>Test SUM</h2>")
-  if(is.null(parsed_data$n1$value)){
-    n1 <- parsed_data$n1
-    n2 <- parsed_data$n2
-  }else{
-    if(is.raw(parsed_data$n1$value)){
-      n1 <- rawToChar(parsed_data$n1$value)
-      n2 <- rawToChar(parsed_data$n2$value)     
-    }else{
-      n1 <- parsed_data$n1$value
-      n2 <- parsed_data$n2$value
-    }
-  }
+  n1 <- parseDataToChar(parsed_data$n1)
+  n2 <- parseDataToChar(parsed_data$n2)
   sum <- testSum(as.numeric(n1),as.numeric(n2))
   cat("<p> ", n1, " + ", n2, " = ", sum, "</p>")
   cat("<p>This calculation has been performed by running a function from an R package stored in a github repository.</p>")
